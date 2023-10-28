@@ -10,8 +10,21 @@ permissions:
 jobs:
   appdmg:
     runs-on: macos-13
+
+    strategy:
+      matrix:
+        node: [ 18, 20 ]
+        python: [ 3.11, 3.12 ]
     
     steps:
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python }}
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+
       - name: python3 version
         run: python3 --version
 
