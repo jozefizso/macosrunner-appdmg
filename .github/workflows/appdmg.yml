@@ -1,0 +1,22 @@
+name: appdmg
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  appdmg:
+    runs-on: macos-13
+    
+    steps:
+      - name: python3 version
+        run: python3 --version
+
+      - name: node version
+        run: node --version
+
+      - name: setup appdmg
+        run: npm install -g appdmg@0.6.6
