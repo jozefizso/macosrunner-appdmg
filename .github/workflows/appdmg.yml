@@ -12,6 +12,7 @@ jobs:
     runs-on: macos-13
 
     strategy:
+      fail-fast: false
       matrix:
         node: [ 18, 20 ]
         python: [ 3.11, 3.12 ]
